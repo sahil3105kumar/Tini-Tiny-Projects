@@ -1,0 +1,49 @@
+# dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# package locks (keep package.json, ignore locks if you prefer clean installs)
+# comment these out if you want reproducible installs across machines
+# package-lock.json
+# yarn.lock
+
+# env & secrets
+.env
+.env.local
+.env.*.local
+
+# logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+logs/
+
+# os junk
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# editor config
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# build output
+dist/
+build/
+out/
+
+# temp / scratch files
+*.tmp
+*.temp
+scratch.*
+todo.txt
+
+# test artifacts
+coverage/
+.nyc_output/
