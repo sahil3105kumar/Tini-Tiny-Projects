@@ -36,7 +36,8 @@ npx serve .
 ## files
 
 ```
-P0-01-ClipboardApp/
+Phase 0 // folder
+01-ClipboardApp/
 └── index.html      ← everything lives here
 ```
 

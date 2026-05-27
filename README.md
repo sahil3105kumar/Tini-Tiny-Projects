@@ -62,7 +62,7 @@ doing it in phases. each folder is one small project. gotta finish each one befo
 ## how to run
 
 ```bash
-cd P0-01-ClipboardApp
+cd phase0/01-ClipboardApp
 # frontend projects: open index.html in a browser
 # node projects:
 node index.js
@@ -74,10 +74,11 @@ node index.js
 semo/
 ├── README.md
 ├── .gitignore
-├── P0-01-ClipboardApp/
+├── Phase 0
+|  └── 01-ClipboardApp/
 │   ├── README.md
 │   └── index.html
-├── P0-02-LocalTodoList/
+├   └── 02-LocalTodoList/
 │   └── ...
 └── ...
 ```
