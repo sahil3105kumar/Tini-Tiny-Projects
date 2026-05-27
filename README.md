@@ -1,4 +1,3 @@
-# semo
 
 learning project. building a p2p encrypted file drop thing from scratch — no servers, no accounts, just two devices talking directly to each other.
 
