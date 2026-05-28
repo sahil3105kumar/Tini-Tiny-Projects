@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Local Todo App</title>
+    <link rel="stylesheet" href="index.css">
+  </head>
+  <body>
+    <div class="app">
+      <h1>02 — <span>todo</span></h1>
+
+      <div class="input-row">
+        <input id="task-input" placeholder="new task..." autocomplete="off" />
+        <button id="add-btn">Add</button>
+      </div>
+
+      <div class="filters">
+        <button data-filter="all" class="active">all</button>
+        <button data-filter="active">active</button>
+        <button data-filter="completed">completed</button>
+      </div>
+
+      <ul id="task-list" class="task-list"></ul>
+
+      <p class="footer" id="footer"></p>
+    </div>
+    
+    <script src="index.js"></script>
+  </body>
+</html>
