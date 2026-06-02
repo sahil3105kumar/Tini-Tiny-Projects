@@ -15,18 +15,18 @@ let filter = 'all'
 // elements
 const input = document.getElementById('task-input')
 const addBtn = document.getElementById('add-btn')
-const taskList = document.getElementById('task-list')
+const taskList = document.getElementById('task-list') // unordered list
 const footer = document.getElementById('footer')
 const filterBtns = document.querySelectorAll('[data-filter]')
 
 // save to localStorage
 function save() {
-  localStorage.setItem('tasks', JSON.stringify(tasks))
+  localStorage.setItem('tasks', JSON.stringify(tasks)) // tasks is object, cant store object directly into storage, so we convert it into string using JSON. (We can store but its very hard to debug and the value shows as 'object' and not the task we added.)
 }
 
 // render list from tasks array
 function render() {
-  const filtered = tasks.filter(task => {
+  const filtered = tasks.filter(task => {         //filtered is an array of boolens which filter tasks array.
     if (filter === 'active') return !task.done
     if (filter === 'completed') return task.done
     return true
@@ -57,7 +57,7 @@ function render() {
     // toggle done on click
     li.addEventListener('click', () => {
       tasks = tasks.map(t =>
-        t.id === task.id ? { ...t, done: !t.done } : t
+        t.id === task.id ? { ...t, done: !t.done } : t // ... is using rest (abd spread syntax.)
       )
       save()
       render()
