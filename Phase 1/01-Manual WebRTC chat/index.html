@@ -1,22 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="index.css">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="index.css">
+  <title>P1-01 — Manual WebRTC Chat</title>
 </head>
 <body>
+  <div class="app">
 
-    <button id="offer">Create Offer</button>
-    <textarea name="Local SDP" id="local-sdp"></textarea>
-    <textarea name="Remote SDP" id="remote-sdp"></textarea>
-    <button id="answer">Create Answer</button>
-    <button id="set-remote">Set Remote Description</button>
-    <input type="text" id="message-input" placeholder="Type a message...">
-    <button id="send">Send</button>
-    <div id="chat"></div>    
-    
-    <script src="index.js"></script>
+    <div class="header">
+      <h1>p1-01 — <span>webrtc chat</span></h1>
+      <span class="status" id="status">disconnected</span>
+    </div>
+
+    <!-- peer a -->
+    <div class="panel">
+      <p class="panel-label">Step 1 — Peer A: create offer</p>
+      <button class="primary" id="offer">Create Offer</button>
+      <p class="panel-label">Local SDP — copy this</p>
+      <textarea id="local-sdp" placeholder="SDP will appear here after creating offer or answer..." readonly></textarea>
+    </div>
+
+    <!-- peer b -->
+    <div class="panel">
+      <p class="panel-label">Step 2 — Paste remote SDP here</p>
+      <textarea id="remote-sdp" placeholder="Paste the other peer's SDP here..."></textarea>
+      <button id="answer">Create Answer (Peer B)</button>
+      <button id="set-remote">Set Remote Description (Peer A)</button>
+    </div>
+
+    <!-- chat -->
+    <div class="chat-panel">
+      <div class="chatbox" id="chat">
+        <p class="empty">no messages yet — connect first</p>
+      </div>
+      <div class="input-row">
+        <input type="text" id="message-input" placeholder="type a message..." autocomplete="off" />
+        <button id="send">Send</button>
+      </div>
+    </div>
+
+  </div>
+  <script src="index.js"></script>
 </body>
 </html>
