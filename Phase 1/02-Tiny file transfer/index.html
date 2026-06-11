@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="index.css">
+  <title>Manual WebRTC Chat</title>
+</head>
+<body>
+  <div class="app">
+
+    <div class="header">
+      <h1>Manual WebRTC Chat</h1>
+      <span class="status" id="status">disconnected</span>
+    </div>
+
+    <!-- peer a -->
+    <div class="panel"> 
+      <p class="panel-label">Step 1 — Peer A: create offer</p>
+      <button class="primary" id="offer">Create Offer</button>
+      <p class="panel-label">Local SDP — copy this</p>
+      <textarea id="local-sdp" placeholder="SDP will appear here after creating offer or answer..." readonly></textarea>
+    </div>
+
+    <!-- peer b -->
+    <div class="panel">
+      <p class="panel-label">Step 2 — Paste remote SDP here</p>
+      <textarea id="remote-sdp" placeholder="Paste the other peer's SDP here..."></textarea>
+      <button id="answer">Create Answer (Peer B)</button>
+      <button id="set-remote">Set Remote Description (Peer A)</button>
+    </div>
+
+    <!-- chat -->
+    <div class="chat-panel">
+      <div class="chatbox" id="chat">
+        <p class="empty">no messages yet — connect first</p>
+      </div>
+      <div class="input-row">
+        <input type="text" id="message-input" placeholder="type a message..." autocomplete="off" />
+        <button id="send">Send</button>
+      </div>
+    </div>
+
+    <!-- File -->
+    <div class="file-panel">
+      <p class="panel-label">File Transfer</p>
+      <input type="file" id="file-input" />
+      <button id="send-file">Send File</button>
+      <p id="transfer-status"></p>
+      <div id="received-files"></div>
+    </div>
+
+  </div>
+  <script src="index.js"></script>
+</body>
+</html>
