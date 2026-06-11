@@ -92,6 +92,7 @@ async function createAnswer() {
     } else if (channel.label == 'file') {
       fc = channel;
       fc.binaryType = 'arraybuffer';
+
       fc.onmessage = (event) => {
         if (typeof event.data === 'string') {
           const data = JSON.parse(event.data);
@@ -108,6 +109,7 @@ async function createAnswer() {
             fileMetadata = null;
           } else if(data.type === 'file-start') {
             fileMetadata = data; // Store metadata for later use
+            recievedChunks = []; // Clear any previous chunks
             transferStatus.textContent = `Receiving ${fileMetadata.name}...`;
           }
         } else {
