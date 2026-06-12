@@ -93,7 +93,7 @@ Tab A:
 
 -----
 That's all about webRTC, how to go over this phase.
-In this phase, i will be building # projects.
+In this phase, i will be building 3 projects.
 
 1. Manual WebRTC chat
 2. Tiny File transer
