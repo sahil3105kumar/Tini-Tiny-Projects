@@ -1,0 +1,89 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #0d0d0d;
+  color: #e0e0e0;
+  font-family: 'IBM Plex Mono', monospace;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#chat {
+  width: 100%;
+  max-width: 500px;
+  height: 80vh;
+  background: #141414;
+  border: 1px solid #2a2a2a;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+h1 {
+  padding: 16px;
+  font-size: 14px;
+  text-transform: lowercase;
+  color: #c8f135;
+  border-bottom: 1px solid #2a2a2a;
+}
+
+#messages {
+  flex: 1;
+  overflow-y: auto;
+  list-style: none;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+#messages li {
+  background: #1e1e1e;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 14px;
+  word-break: break-word;
+  border-left: 2px solid #c8f135;
+}
+
+#form {
+  display: flex;
+  border-top: 1px solid #2a2a2a;
+}
+
+#input {
+  flex: 1;
+  background: #0d0d0d;
+  border: none;
+  padding: 14px 16px;
+  color: #e0e0e0;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 14px;
+  outline: none;
+}
+
+#input::placeholder {
+  color: #555;
+}
+
+#form button {
+  background: #c8f135;
+  color: #0d0d0d;
+  border: none;
+  padding: 0 20px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+#form button:get-hover {
+  opacity: 0.85;
+}
