@@ -3,6 +3,8 @@ const form = document.getElementById('form')
 const input = document.getElementById('input')
 const list = document.getElementById('messages')
 
+const room = prompt('enter room name:') || 'general'
+
 form.addEventListener('submit', (e) => {
   e.preventDefault()
   const msg = input.value
@@ -12,6 +14,7 @@ form.addEventListener('submit', (e) => {
 
 socket.on('connect', () => {
   console.log('connected to server, my socket ID is', socket.id)
+  socket.emit('join room', room) // this will trigger the 'join room' event on the server, and the server will add this socket to the specified room.
 })
 
 socket.on('chat message', (msg) => {

@@ -11,9 +11,15 @@ app.use(express.static('public'))
 io.on('connection', (socket) => {
   console.log('a user connected:', socket.id) //  this wont show up in the browser console, it will show up in the terminal where you ran node server.js.
 
+  socket.on('join room', (roomName) => {
+    socket.join(roomName) // a socket can join multiple rooms.
+    socket.data.room = roomName
+    console.log(`${socket.id} joined room: ${roomName}`)
+  })
+
   socket.on('message', (msg) => {
     console.log('message from client:', msg)
-    io.emit('chat message', msg)
+    io.to(socket.data.room).emit('chat message', msg)
   })
 
   socket.on('disconnect', () => {
