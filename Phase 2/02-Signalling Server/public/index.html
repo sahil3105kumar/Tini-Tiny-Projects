@@ -4,15 +4,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>p2p signaling</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="index.css">
 </head>
 <body>
   <div id="app">
 
     <div id="lobby">
-      <center><h1>whoosh<span class="dot">.</span></h1>
+      <h1>whoosh<span class="dot">.</span></h1>
       <p class="sub">peer-to-peer, no server in the middle</p>
-      <div id="actions"> </center>
+      <div id="actions">
         <button id="createBtn">create room</button>
         <div class="divider">or</div>
         <div id="joinGroup">
@@ -23,23 +25,22 @@
     </div>
 
     <div id="room" class="hidden">
-      <!-- <h1>whoosh<span class="dot">.</span></h1> -->
-      <div id="status">
-        <p id="roomCode"></p>
-        <p id="statusMsg"></p>
-      </div>
+      <p id="roomCode"></p>
+      <p id="statusMsg"></p>
     </div>
 
-    <!-- chat -->
-    <div class="chat-panel">
+
+    <!-- chat  -->
+    <div class="chatPanel hidden" id="chatPanel">
       <div class="chatbox" id="chat">
-        <p class="empty">no messages yet — connect first</p>
+        <p class="empty">no messages yet</p>
       </div>
       <div class="input-row">
         <input type="text" id="msgInput" placeholder="type a message..." autocomplete="off" />
-        <button id="sendBtn">Send</button>
+        <button id="sendBtn" disabled>send</button>
       </div>
     </div>
+
 
   </div>
   <script src="/socket.io/socket.io.js"></script>

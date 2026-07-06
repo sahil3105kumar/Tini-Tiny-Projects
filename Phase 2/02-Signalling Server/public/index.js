@@ -10,6 +10,7 @@ const statusMsg = document.getElementById('statusMsg')
 const chatbox  = document.getElementById('chat')
 const msgInput = document.getElementById('msgInput')
 const sendBtn  = document.getElementById('sendBtn')
+const chatPannel = document.getElementById('chatPanel')
 
 // --- webrtc state ---
 let pc = null
@@ -43,6 +44,9 @@ function setupDataChannel() {
   dc.onopen = () => {
     setStatus('connected', true)
     sendBtn.disabled = false
+    room.classList.add('hidden') // hide room code once connected
+    chatPannel.classList.remove('hidden')
+    chatPannel.style.height = '400px'
   }
   dc.onmessage = (e) => appendMessage(`them: ${e.data}`, 'them')
   dc.onclose = () => setStatus('disconnected')
