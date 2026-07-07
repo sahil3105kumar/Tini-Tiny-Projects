@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>whoosh.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <div id="app">
+
+    <!-- idle -->
+    <div data-screen="idle">
+      <h1>whoosh<span class="dot">.</span></h1>
+      <p class="sub">drop files directly to another device</p>
+      <div class="actions">
+        <button id="createBtn">create room</button>
+        <div class="divider">or</div>
+        <div class="join-row">
+          <input id="roomInput" placeholder="enter room code" autocomplete="off" />
+          <button id="joinBtn">join</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- waiting -->
+    <div data-screen="waiting">
+      <p class="label">room code</p>
+      <div class="code-row">
+        <span id="roomCode"></span>
+        <button id="copyBtn" class="icon-btn" title="copy code">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+        </button>
+      </div>
+      <p class="status-text">waiting for peer to join...</p>
+      <div class="pulse-row">
+        <span class="pulse"></span>
+        <span class="pulse-label">listening</span>
+      </div>
+    </div>
+
+    <!-- connecting -->
+    <div data-screen="connecting">
+      <p class="label">room code</p>
+      <span id="roomCodeConnecting" class="code-display"></span>
+      <p class="status-text" id="connectingMsg">peer joined — negotiating...</p>
+      <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+    </div>
+
+    <!-- connected -->
+    <div data-screen="connected">
+      <div class="connected-header">
+        <span class="badge">connected</span>
+        <span class="peer-id" id="peerId"></span>
+      </div>
+      <div class="chatbox" id="chat">
+        <p class="empty">no messages yet</p>
+      </div>
+      <div class="input-row">
+        <input type="text" id="msgInput" placeholder="type a message..." autocomplete="off" />
+        <button id="sendBtn">send</button>
+      </div>
+    </div>
+
+    <!-- error -->
+    <div data-screen="error">
+      <p class="error-icon">✕</p>
+      <p class="error-msg" id="errorMsg"></p>
+      <button id="retryBtn">try again</button>
+    </div>
+
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="index.js"></script>
+</body>
+</html>
