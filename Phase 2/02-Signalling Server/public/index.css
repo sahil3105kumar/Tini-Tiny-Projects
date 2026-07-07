@@ -196,3 +196,26 @@ button:disabled { opacity: 0.3; cursor: not-allowed; }
 }
 
 .hidden { display: none !important; }
+
+#roomRow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+#copyBtn {
+  width: auto;
+  padding: 6px 8px;
+  background: transparent;
+  color: var(--muted);
+  border: 1px solid var(--border);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+#copyBtn:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+  opacity: 1;
+}

@@ -7,7 +7,7 @@ first Phase 2 project. real chat between multiple browser tabs through an actual
 - type a message, hit send (or enter)
 - server receives it and broadcasts it out to every connected client, including the sender
 - message shows up in every open tab, in order
----
+--- 
 ## how to run
 ```
 npm install

@@ -25,13 +25,16 @@
     </div>
 
     <div id="room" class="hidden">
-      <p id="roomCode"></p>
+      <div id="roomRow">
+        <p id="roomCode"></p>
+        <button id="copyBtn">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+        </button>
+      </div>
       <p id="statusMsg"></p>
     </div>
 
-
-    <!-- chat  -->
-    <div class="chatPanel hidden" id="chatPanel">
+    <div class="chat-panel hidden" id="chatPanel">
       <div class="chatbox" id="chat">
         <p class="empty">no messages yet</p>
       </div>
@@ -40,7 +43,6 @@
         <button id="sendBtn" disabled>send</button>
       </div>
     </div>
-
 
   </div>
   <script src="/socket.io/socket.io.js"></script>
